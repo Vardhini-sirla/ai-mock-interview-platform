@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Corpus audio is large and may contain real voices - keep it local.
+# Ground truth and committed result CSVs are tracked; raw audio is not.
+benchmarks/corpus/*.wav
+benchmarks/corpus/*.mp3
