@@ -1,0 +1,25 @@
+# AI mock-interview agent - Python dependencies
+# Python 3.11+ required (modern type hints, asyncio.to_thread, tomllib).
+#
+# Install: pip install -r requirements.txt
+#
+# Provider SDKs are imported lazily (see src/providers/__init__.py), so you can
+# comment out the two you are not using and still run the suite and benchmark
+# the one you are.
+
+# --- STT providers (Sprint 1) -------------------------------------------------
+deepgram-sdk>=3.7,<5          # nova-3 baseline, keyterm boost
+openai>=1.40                  # whisper-1 comparison
+assemblyai>=0.33              # best-tier comparison, word_boost
+
+# --- Benchmark harness --------------------------------------------------------
+jiwer>=3.0                    # WER scoring + normalisation transforms
+pandas>=2.2                   # results CSV analysis across runs
+tenacity>=8.2                 # retry/backoff for long-running batch calls
+
+# --- Config ------------------------------------------------------------------
+python-dotenv>=1.0            # loads .env for local runs
+
+# --- Tests -------------------------------------------------------------------
+pytest>=8.0
+pytest-asyncio>=0.23          # async provider tests (Sprint 2 onward)
